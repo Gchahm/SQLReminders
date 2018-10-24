@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using SQLReminders.Data.Helpers;
 
 namespace SQLReminders.Data.Controllers
 {
     public class ConfigureController
     {
+        public TableBuilder TableBuilder;
+
         public ConfigureController()
         {
+            TableBuilder = new TableBuilder();
         }
 
         public string Licence

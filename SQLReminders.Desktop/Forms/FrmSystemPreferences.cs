@@ -164,7 +164,7 @@ namespace SQLReminders.Desktop.Forms
 
         private void CmdCreateTables_Click(object sender, EventArgs e)
         {
-            OpenFrame(new FrmCreateTables(App));
+            OpenFrame(new FrmCreateTables(Configure.TableBuilder));
         }
 
         private void SystemPreferences_Load(object sender, EventArgs e)

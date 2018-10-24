@@ -308,7 +308,7 @@
             this.MaximumSize = new System.Drawing.Size(750, 300);
             this.MinimumSize = new System.Drawing.Size(750, 300);
             this.Name = "FrmReminder";
-            this.Text = "FrmReminder";
+            this.Text = "Reminder";
             this.gbGeneralDetails.ResumeLayout(false);
             this.gbGeneralDetails.PerformLayout();
             this.gbSchedule.ResumeLayout(false);

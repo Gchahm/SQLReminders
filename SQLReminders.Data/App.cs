@@ -18,7 +18,6 @@ namespace SQLReminders.Data
         public ConfigureController Config { get; }
         public CSVController CSVController { get; }
 
-        private TableBuilder TableBuilder;
         private EmailGenerator EmailGenerator { get; }
         private EmailSender EmailSender { get; }
         private UpdateManager UpdateManager { get; }
@@ -30,8 +29,7 @@ namespace SQLReminders.Data
             LookupController = new LookupController();
             CSVController = new CSVController(ReminderController);
             Config = new ConfigureController();
-
-            TableBuilder = new TableBuilder();
+            
             UpdateManager = new UpdateManager();
             EmailGenerator = new EmailGenerator(UpdateManager);
             EmailSender = new EmailSender();
@@ -50,11 +48,6 @@ namespace SQLReminders.Data
                 EmailGenerator.ExtractEmails(ReminderController.DueReminders);
                 EmailSender.SendEmails();
             }
-        }
-
-        public void BuilTables(BindingList<string> list)
-        {
-            TableBuilder.CreateTables(list);
         }
 
     }

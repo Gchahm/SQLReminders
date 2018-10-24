@@ -527,6 +527,7 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(100, 20);
             this.TxtPassword.TabIndex = 20;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // TxtUsername
             // 

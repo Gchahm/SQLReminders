@@ -8,13 +8,13 @@ namespace SQLReminders.Desktop.Forms
     public partial class FrmCreateTables : Form
     {
         private BindingList<string> dataSource;
-        public FrmCreateTables(App app)
+        public FrmCreateTables(TableBuilder builder)
         {
 
             InitializeComponent();
             dataSource = new BindingList<string>();
             ListBox.DataSource = dataSource;
-            app.BuilTables(dataSource);
+            builder.CreateTables(dataSource);
         }
     }
 }

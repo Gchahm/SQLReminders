@@ -214,7 +214,7 @@
             // 
             // CmdTickNow
             // 
-            this.CmdTickNow.Location = new System.Drawing.Point(360, 437);
+            this.CmdTickNow.Location = new System.Drawing.Point(360, 434);
             this.CmdTickNow.Name = "CmdTickNow";
             this.CmdTickNow.Size = new System.Drawing.Size(75, 23);
             this.CmdTickNow.TabIndex = 7;

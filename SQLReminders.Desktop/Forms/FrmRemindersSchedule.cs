@@ -27,14 +27,15 @@ namespace SQLReminders.Desktop.Forms
 
             column = DgvReminderList.Columns[0];
             column.Width = 60;
-            column.Name = "ID";
+            column.HeaderText = "ID";
 
             column = DgvReminderList.Columns[1];
             column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            column.Name = "Reminder Name";
+            column.HeaderText = "Reminder Name";
 
             column = DgvReminderList.Columns[2];
-            column.Name = "Next Run Date";
+            column.HeaderText = "Next Run Date";
+            column.Width = 120;
 
             for (int i = 3; i < DgvReminderList.ColumnCount; i++)
                 DgvReminderList.Columns[i].Visible = false;
