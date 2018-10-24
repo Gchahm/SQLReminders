@@ -20,8 +20,7 @@ namespace SQLReminders.Data
 
         private EmailGenerator EmailGenerator { get; }
         private EmailSender EmailSender { get; }
-        private UpdateManager UpdateManager { get; }
-
+        
         public App()
         {
             ReminderController = new ReminderController();
@@ -29,9 +28,8 @@ namespace SQLReminders.Data
             LookupController = new LookupController();
             CSVController = new CSVController(ReminderController);
             Config = new ConfigureController();
-            
-            UpdateManager = new UpdateManager();
-            EmailGenerator = new EmailGenerator(UpdateManager);
+
+            EmailGenerator = new EmailGenerator(ReminderController);
             EmailSender = new EmailSender();
 
             
@@ -45,7 +43,7 @@ namespace SQLReminders.Data
         {
             if(Active && Licenced)
             {
-                EmailGenerator.ExtractEmails(ReminderController.DueReminders);
+                EmailGenerator.ExtractEmails();
                 EmailSender.SendEmails();
             }
         }

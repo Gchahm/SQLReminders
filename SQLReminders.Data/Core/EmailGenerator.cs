@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Data.Linq;
+using SQLReminders.Data.Controllers;
 
 namespace SQLReminders.Data.Core
 {
@@ -14,17 +15,19 @@ namespace SQLReminders.Data.Core
 
         Reminder reminder;
         private Table<Email> _Emails;
-        UpdateManager UpdateManager;
+        private UpdateManager UpdateManager;
+        private ReminderController ReminderController;
 
-        public EmailGenerator(UpdateManager updateManager)
+        public EmailGenerator(ReminderController reminderController)
         {
             _Emails = Models.Ereminders.Instance.GetTable<Email>();
-            UpdateManager = updateManager;
+            UpdateManager = new UpdateManager();
+            ReminderController = reminderController;
         }
 
-        public void ExtractEmails(List<Reminder> dueReminders)
+        public void ExtractEmails()
         {
-            foreach (Reminder reminder in dueReminders)
+            foreach (Reminder reminder in ReminderController.DueReminders)
             {
                 QueueEmails(reminder);
                 UpdateManager.UpdateFields(reminder);
